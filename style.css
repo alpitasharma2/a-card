@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e7f2fb;
+    background-image: url('https://media.istockphoto.com/videos/blue-sky-full-of-clouds-moving-right-to-left-cartoon-sky-animated-video-id1215291953?s=640x640');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card{
+   position: relative;
+   width: 300px;
+   height: 400px;
+   background: #fff ;
+   transform-style: preserve-3d;
+   transform: perspective(1000px); 
+   box-shadow: 10px 20px 40px rgba(0, 0,0,0.5);
+   transition: 1s;
+}
+
+.card:hover{
+    transform: translateX(50%);
+}
+
+.card .imgBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    background: #000;
+    transition: 1s;
+    box-shadow: 10px 20px 40px rgba(0, 0,0,0.5);
+}
+
+.card:hover .imgBox{
+    transform: rotateY(-180deg);
+}
+
+.card .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.card .imgBox img:nth-child(2)
+{
+    transform: rotateY(180deg);
+}
+
+
+
+.card .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card .details .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.card .details .content h2{
+    text-align: center;
+    font-weight: 700px;
+    line-height: 1em;
+
+}
+
+.card .details .content h2 span{
+    color:blue;
+    font-size: 0.8em;
+
+}
+
+.card .details .content .social-icons{
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+
+.card .details .content .social-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.card .details .content .social-icons a:hover{
+    background: rgb(63, 169, 255);
+
+}
